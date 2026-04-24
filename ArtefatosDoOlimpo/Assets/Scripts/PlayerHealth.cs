@@ -15,17 +15,13 @@ public class PlayerHealth : MonoBehaviour
     void Start()
     {
         health = maxHealth;
-
-        if (healthBar != null)
-            healthBar.SetMax(maxHealth);
+        if (healthBar != null) healthBar.SetMax(maxHealth);
     }
 
     public void TakeDamage(int damage)
     {
         health -= damage;
-
-        if (healthBar != null)
-            healthBar.Set(health);
+        if (healthBar != null) healthBar.Set(health);
 
         if (health <= 0)
         {
@@ -36,8 +32,6 @@ public class PlayerHealth : MonoBehaviour
     void LoseLife()
     {
         lives--;
-
-        Debug.Log("Perdeu uma vida! Restam: " + lives);
 
         if (lives > 0)
         {
@@ -52,22 +46,16 @@ public class PlayerHealth : MonoBehaviour
     void Respawn()
     {
         Vector3 respawn = GameManager.instance.GetCheckpoint();
-
         transform.position = respawn;
 
         health = maxHealth;
-
-        if (healthBar != null)
-            healthBar.Set(health);
+        if (healthBar != null) healthBar.Set(health);
     }
 
     IEnumerator GameOver()
     {
-        if (gameOverUI != null)
-            gameOverUI.SetActive(true);
-
+        if (gameOverUI != null) gameOverUI.SetActive(true);
         yield return new WaitForSeconds(2f);
-
         SceneManager.LoadScene("Fase1");
     }
 }

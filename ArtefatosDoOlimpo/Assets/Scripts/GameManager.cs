@@ -4,7 +4,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
 
-    private Vector3 checkpointPosition;
+    private Vector3 checkpoint;
 
     void Awake()
     {
@@ -21,12 +21,11 @@ public class GameManager : MonoBehaviour
 
     public void SetCheckpoint(Vector3 pos)
     {
-        checkpointPosition = pos;
-        Debug.Log("Checkpoint salvo!");
+        checkpoint = pos;
     }
 
     public Vector3 GetCheckpoint()
     {
-        return checkpointPosition;
+        return checkpoint;
     }
 }

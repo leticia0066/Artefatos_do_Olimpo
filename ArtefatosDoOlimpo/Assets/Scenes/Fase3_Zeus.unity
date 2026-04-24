@@ -848,7 +848,7 @@ Transform:
   m_GameObject: {fileID: 652453430}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 16.64, y: -1.85, z: 0}
+  m_LocalPosition: {x: 16.9, y: -3.13, z: 0}
   m_LocalScale: {x: -6.2348175, y: 0.7228, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7223,8 +7223,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerHealth
   maxHealth: 5
-  currentHealth: 0
+  health: 0
+  lives: 3
   healthBar: {fileID: 0}
+  gameOverUI: {fileID: 0}
 --- !u!114 &2031193740
 MonoBehaviour:
   m_ObjectHideFlags: 0

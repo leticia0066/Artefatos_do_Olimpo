@@ -2,23 +2,28 @@ using UnityEngine;
 
 public class Medusa : MonoBehaviour
 {
-    public int health = 10;
+    public int maxHealth = 10;
+    private int health;
 
-    [Header("Referências")]
     public GameObject bossDoor;
-
-    private bool isDead = false;
+    public GameObject healthBarUI;
 
     void Start()
     {
-        if (bossDoor != null)
-            bossDoor.SetActive(true); // começa fechada
+        health = maxHealth;
+
+        if (healthBarUI != null)
+            healthBarUI.SetActive(false);
+    }
+
+    public void ActivateBoss()
+    {
+        if (healthBarUI != null)
+            healthBarUI.SetActive(true);
     }
 
     public void TakeDamage(int damage)
     {
-        if (isDead) return;
-
         health -= damage;
 
         if (health <= 0)
@@ -29,15 +34,11 @@ public class Medusa : MonoBehaviour
 
     void Die()
     {
-        isDead = true;
-
-        Debug.Log("🐍 Medusa derrotada!");
-
-        // 🔓 abre a porta
         if (bossDoor != null)
-        {
             bossDoor.SetActive(false);
-        }
+
+        if (healthBarUI != null)
+            healthBarUI.SetActive(false);
 
         Destroy(gameObject);
     }
