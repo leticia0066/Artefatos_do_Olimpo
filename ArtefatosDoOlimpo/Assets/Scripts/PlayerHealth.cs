@@ -55,7 +55,6 @@ public class PlayerHealth : MonoBehaviour
     IEnumerator GameOver()
     {
         if (gameOverUI != null) gameOverUI.SetActive(true);
-        yield return new WaitForSeconds(2f);
-        SceneManager.LoadScene("Fase1");
+        yield return null;
     }
 }
