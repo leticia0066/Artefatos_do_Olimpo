@@ -2,17 +2,19 @@ using UnityEngine;
 
 public class CheckPoint : MonoBehaviour
 {
-    private bool activated = false;
-
-    void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (!activated && collision.CompareTag("Player"))
+        if (collision.CompareTag("Player"))
         {
-            activated = true;
-
-            GameManager.instance.SetCheckpoint(transform.position);
-
-            GetComponent<SpriteRenderer>().color = Color.green;
+            if (GameManager.instance != null)
+            {
+                GameManager.instance.SetCheckpoint(transform.position);
+                Debug.Log("Checkpoint salvo");
+            }
+            else
+            {
+                Debug.LogError("GameManager não encontrado!");
+            }
         }
     }
 }

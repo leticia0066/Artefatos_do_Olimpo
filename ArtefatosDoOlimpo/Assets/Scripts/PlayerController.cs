@@ -5,7 +5,6 @@ public class PlayerController : MonoBehaviour
     public float speed = 5f;
     public float jumpForce = 10f;
 
-    public Transform groundCheck;
     public LayerMask groundLayer;
 
     public Transform attackPoint;
@@ -14,6 +13,7 @@ public class PlayerController : MonoBehaviour
 
     private Rigidbody2D rb;
     private bool isGrounded;
+    private float moveInput;
 
     void Start()
     {
@@ -22,6 +22,8 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        moveInput = Input.GetAxis("Horizontal");
+
         Move();
         Jump();
 
@@ -33,14 +35,25 @@ public class PlayerController : MonoBehaviour
 
     void Move()
     {
-        float moveInput = Input.GetAxis("Horizontal");
         rb.linearVelocity = new Vector2(moveInput * speed, rb.linearVelocity.y);
+
+        //  VIRAR SEM ALTERAR TAMANHO
+        Vector3 scale = transform.localScale;
+
+        if (moveInput > 0)
+        {
+            scale.x = Mathf.Abs(scale.x);
+        }
+        else if (moveInput < 0)
+        {
+            scale.x = -Mathf.Abs(scale.x);
+        }
+
+        transform.localScale = scale;
     }
 
     void Jump()
     {
-        isGrounded = Physics2D.OverlapCircle(groundCheck.position, 0.4f, groundLayer);
-
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
         {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
@@ -49,7 +62,9 @@ public class PlayerController : MonoBehaviour
 
     void Attack()
     {
-        Debug.Log("Atacou!");
+        Debug.Log("ATACANDO");
+
+        if (attackPoint == null) return;
 
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(
             attackPoint.position,
@@ -63,11 +78,27 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    // só pra ver o alcance do ataque na cena
+    // DETECTA CHÃO SEM GROUNDCHECK
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (((1 << collision.gameObject.layer) & groundLayer) != 0)
+        {
+            isGrounded = true;
+        }
+    }
+
+    void OnCollisionExit2D(Collision2D collision)
+    {
+        if (((1 << collision.gameObject.layer) & groundLayer) != 0)
+        {
+            isGrounded = false;
+        }
+    }
+
+    //  VISUAL DO ATAQUE
     void OnDrawGizmosSelected()
     {
-        if (attackPoint == null)
-            return;
+        if (attackPoint == null) return;
 
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(attackPoint.position, attackRange);
