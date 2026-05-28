@@ -5,7 +5,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
 
-    private Vector3 checkpointPosition;
+    public Vector3 checkpointPosition;
 
     void Awake()
     {

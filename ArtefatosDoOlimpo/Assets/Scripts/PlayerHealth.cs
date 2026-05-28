@@ -2,20 +2,43 @@ using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
 {
+    [Header("Vida")]
     public int maxHealth = 5;
-    public int health;
+    public int currentHealth;
+
+    [Header("Vidas")]
     public int lives = 3;
+
+    [Header("UI")]
+    public PlayerHealthBar healthBar;
+
+    private Rigidbody2D rb;
 
     void Start()
     {
-        health = maxHealth;
+        currentHealth = maxHealth;
+
+        rb = GetComponent<Rigidbody2D>();
+
+        // Atualiza barra
+        if (healthBar != null)
+        {
+            healthBar.Set(currentHealth);
+        }
     }
 
     public void TakeDamage(int damage)
     {
-        health -= damage;
+        currentHealth -= damage;
 
-        if (health <= 0)
+        // Atualiza barra
+        if (healthBar != null)
+        {
+            healthBar.Set(currentHealth);
+        }
+
+        // Morreu
+        if (currentHealth <= 0)
         {
             lives--;
 
@@ -25,23 +48,43 @@ public class PlayerHealth : MonoBehaviour
             }
             else
             {
-                if (GameManager.instance != null)
-                    GameManager.instance.GameOver();
+                GameOver();
             }
         }
     }
 
     void Respawn()
     {
-        health = maxHealth;
+        // Restaura vida
+        currentHealth = maxHealth;
+
+        // Atualiza barra
+        if (healthBar != null)
+        {
+            healthBar.Set(currentHealth);
+        }
+
+        // Move pro checkpoint
+        if (GameManager.instance != null)
+        {
+            transform.position = GameManager.instance.checkpointPosition;
+        }
+
+        // Reseta física
+        if (rb != null)
+        {
+            rb.linearVelocity = Vector2.zero;
+            rb.angularVelocity = 0f;
+        }
+    }
+
+    void GameOver()
+    {
+        Debug.Log("GAME OVER");
 
         if (GameManager.instance != null)
         {
-            GameManager.instance.RespawnPlayer(gameObject);
-        }
-        else
-        {
-            Debug.LogError("GameManager NÃO encontrado!");
+            GameManager.instance.GameOver();
         }
     }
 }
