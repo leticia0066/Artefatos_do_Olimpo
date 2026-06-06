@@ -6,19 +6,13 @@ public class Minotaur : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
-        health -= damage;
+        Debug.Log("MINOTAURO ACERTOU");
 
-        Debug.Log("Minotauro tomou dano! Vida: " + health);
+        health -= damage;
 
         if (health <= 0)
         {
-            Die();
+            Destroy(gameObject);
         }
-    }
-
-    void Die()
-    {
-        Debug.Log("Minotauro morreu!");
-        Destroy(gameObject);
     }
 }

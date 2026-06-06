@@ -61,22 +61,33 @@ public class PlayerController : MonoBehaviour
     }
 
     void Attack()
+{
+    Debug.Log("ATACANDO");
+
+    if (attackPoint == null)
     {
-        Debug.Log("ATACANDO");
-
-        if (attackPoint == null) return;
-
-        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(
-            attackPoint.position,
-            attackRange,
-            enemyLayers
-        );
-
-        foreach (Collider2D enemy in hitEnemies)
-        {
-            enemy.SendMessage("TakeDamage", 1, SendMessageOptions.DontRequireReceiver);
-        }
+        Debug.Log("AttackPoint nulo");
+        return;
     }
+
+    Collider2D[] hitEnemies =
+        Physics2D.OverlapCircleAll(
+        attackPoint.position,
+        attackRange,
+        enemyLayers);
+
+    Debug.Log("Inimigos encontrados: " + hitEnemies.Length);
+
+    foreach (Collider2D enemy in hitEnemies)
+    {
+        Debug.Log("Acertou: " + enemy.name);
+
+        enemy.SendMessage(
+            "TakeDamage",
+            1,
+            SendMessageOptions.DontRequireReceiver);
+    }
+}
 
     // DETECTA CHÃO SEM GROUNDCHECK
     void OnCollisionEnter2D(Collision2D collision)
