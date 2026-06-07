@@ -6,15 +6,7 @@ public class CheckPoint : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            if (GameManager.instance != null)
-            {
-                GameManager.instance.SetCheckpoint(transform.position);
-                Debug.Log("Checkpoint salvo");
-            }
-            else
-            {
-                Debug.LogError("GameManager não encontrado!");
-            }
+            Debug.Log("Checkpoint ativado");
         }
     }
 }

@@ -1,5 +1,5 @@
+using System.Collections;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -14,19 +14,32 @@ public class PlayerHealth : MonoBehaviour
     public HeartUI heartUI;
 
     private Rigidbody2D rb;
+    private Animator anim;
+    private bool isDead = false;
 
     void Start()
     {
         currentHealth = maxHealth;
 
         rb = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
 
-        UpdateHearts();
+        if (heartUI == null)
+            heartUI = FindFirstObjectByType<HeartUI>();
+
+        UpdateUI();
     }
 
     public void TakeDamage(int damage)
     {
+        if (isDead) return;
+
         currentHealth -= damage;
+
+        if (currentHealth < 0)
+            currentHealth = 0;
+
+        UpdateUI();
 
         if (currentHealth <= 0)
         {
@@ -34,46 +47,77 @@ public class PlayerHealth : MonoBehaviour
 
             if (lives > 0)
             {
-                Respawn();
+                StartCoroutine(RespawnToCheckpoint());
             }
             else
             {
-                GameOver();
+                StartCoroutine(RespawnToStart());
             }
         }
     }
 
-    void Respawn()
+    void UpdateUI()
     {
+        if (heartUI != null)
+            heartUI.UpdateHearts(lives);
+    }
+
+    IEnumerator RespawnToCheckpoint()
+    {
+        isDead = true;
+
+        if (anim != null)
+            anim.SetTrigger("Die");
+
+        rb.linearVelocity = Vector2.zero;
+
+        yield return new WaitForSeconds(0.6f);
+
+        Vector3 pos = Vector3.zero;
+
+        if (GameManager.instance != null)
+            pos = GameManager.instance.GetSpawnPosition();
+
+        transform.position = pos;
+
         currentHealth = maxHealth;
 
-        UpdateHearts();
+        UpdateUI();
+
+        yield return new WaitForSeconds(0.2f);
+
+        isDead = false;
+    }
+
+    IEnumerator RespawnToStart()
+    {
+        isDead = true;
+
+        if (anim != null)
+            anim.SetTrigger("Die");
+
+        rb.linearVelocity = Vector2.zero;
+
+        yield return new WaitForSeconds(0.8f);
+
+        // 🔥 RESET TOTAL DE VIDAS
+        lives = 3;
+        currentHealth = maxHealth;
+
+        Vector3 startPos = Vector3.zero;
 
         if (GameManager.instance != null)
         {
-            transform.position = GameManager.instance.checkpointPosition;
+            GameManager.instance.ResetToStart();
+            startPos = GameManager.instance.GetSpawnPosition();
         }
 
-        if (rb != null)
-        {
-            rb.linearVelocity = Vector2.zero;
-            rb.angularVelocity = 0f;
-        }
-    }
+        transform.position = startPos;
 
-    void GameOver()
-    {
-        Debug.Log("GAME OVER");
+        UpdateUI();
 
-        // volta pro início do jogo (troque o nome se precisar)
-        SceneManager.LoadScene("Fase1_Ares");
-    }
+        yield return new WaitForSeconds(0.2f);
 
-    void UpdateHearts()
-    {
-        if (heartUI != null)
-        {
-            heartUI.UpdateHearts(lives);
-        }
+        isDead = false;
     }
 }

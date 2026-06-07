@@ -2,18 +2,25 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public float speed = 5f;
-    public float jumpForce = 10f;
+    [Header("Movimento")]
+    public float speed = 8f;
+    public float acceleration = 15f;
+    public float jumpForce = 12f;
 
+    [Header("Ground Check")]
+    public Transform groundCheck;
+    public float groundRadius = 0.2f;
     public LayerMask groundLayer;
 
+    [Header("Ataque")]
     public Transform attackPoint;
     public float attackRange = 0.5f;
     public LayerMask enemyLayers;
 
     private Rigidbody2D rb;
-    private bool isGrounded;
     private float moveInput;
+    private float currentSpeed;
+    private bool isGrounded;
 
     void Start()
     {
@@ -22,9 +29,8 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        moveInput = Input.GetAxis("Horizontal");
+        moveInput = Input.GetAxisRaw("Horizontal");
 
-        Move();
         Jump();
 
         if (Input.GetKeyDown(KeyCode.Z))
@@ -33,18 +39,36 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    void FixedUpdate()
+    {
+        GroundCheck();
+        Move();
+    }
+
+    // MOVIMENTO LISO
     void Move()
     {
-        rb.linearVelocity =
-            new Vector2(moveInput * speed, rb.linearVelocity.y);
+        float targetSpeed = moveInput * speed;
+
+        currentSpeed = Mathf.Lerp(
+            currentSpeed,
+            targetSpeed,
+            acceleration * Time.fixedDeltaTime
+        );
+
+        rb.linearVelocity = new Vector2(currentSpeed, rb.linearVelocity.y);
+
+        Flip();
+    }
+
+    // VIRA O PLAYER SEM ALTERAR ESCALA ORIGINAL
+    void Flip()
+    {
+        if (moveInput == 0) return;
 
         Vector3 scale = transform.localScale;
 
-        if (moveInput > 0)
-            scale.x = Mathf.Abs(scale.x);
-
-        else if (moveInput < 0)
-            scale.x = -Mathf.Abs(scale.x);
+        scale.x = Mathf.Abs(scale.x) * Mathf.Sign(moveInput);
 
         transform.localScale = scale;
     }
@@ -53,63 +77,56 @@ public class PlayerController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
         {
-            rb.linearVelocity =
-                new Vector2(rb.linearVelocity.x, jumpForce);
+            rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
         }
+    }
+
+    void GroundCheck()
+    {
+        if (groundCheck == null) return;
+
+        isGrounded = Physics2D.OverlapCircle(
+            groundCheck.position,
+            groundRadius,
+            groundLayer
+        );
     }
 
     void Attack()
     {
-        Debug.Log("ATACANDO");
+        if (attackPoint == null) return;
 
-        if (attackPoint == null)
-            return;
-
-        Collider2D[] hitEnemies =
-            Physics2D.OverlapCircleAll(
-                attackPoint.position,
-                attackRange,
-                enemyLayers);
+        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(
+            attackPoint.position,
+            attackRange,
+            enemyLayers
+        );
 
         foreach (Collider2D enemy in hitEnemies)
         {
-            // NÃO deixa o player atacar ele mesmo
             if (enemy.gameObject == gameObject)
                 continue;
-
-            Debug.Log("Acertou: " + enemy.name);
 
             enemy.SendMessage(
                 "TakeDamage",
                 1,
-                SendMessageOptions.DontRequireReceiver);
-        }
-    }
-
-    void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (((1 << collision.gameObject.layer) & groundLayer) != 0)
-        {
-            isGrounded = true;
-        }
-    }
-
-    void OnCollisionExit2D(Collision2D collision)
-    {
-        if (((1 << collision.gameObject.layer) & groundLayer) != 0)
-        {
-            isGrounded = false;
+                SendMessageOptions.DontRequireReceiver
+            );
         }
     }
 
     void OnDrawGizmosSelected()
     {
-        if (attackPoint == null)
-            return;
+        if (attackPoint != null)
+        {
+            Gizmos.color = Color.red;
+            Gizmos.DrawWireSphere(attackPoint.position, attackRange);
+        }
 
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(
-            attackPoint.position,
-            attackRange);
+        if (groundCheck != null)
+        {
+            Gizmos.color = Color.green;
+            Gizmos.DrawWireSphere(groundCheck.position, groundRadius);
+        }
     }
 }

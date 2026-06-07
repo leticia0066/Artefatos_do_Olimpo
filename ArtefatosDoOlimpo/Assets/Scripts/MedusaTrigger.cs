@@ -3,32 +3,51 @@ using System.Collections;
 
 public class MedusaTrigger : MonoBehaviour
 {
+    [Header("Boss")]
+    public GameObject medusa;
+    public GameObject bossDoor;
+
+    [Header("UI (opcional)")]
     public GameObject warningText;
-    public Medusa medusa;
 
-    private bool activated = false;
+    private bool fightStarted = false;
 
-    void Start()
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (warningText != null)
-            warningText.SetActive(false);
-    }
+        if (!collision.CompareTag("Player"))
+            return;
 
-    void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (!activated && collision.CompareTag("Player"))
-        {
-            activated = true;
-            StartCoroutine(StartFight());
-        }
+        if (fightStarted)
+            return;
+
+        StartCoroutine(StartFight());
     }
 
     IEnumerator StartFight()
     {
-        warningText.SetActive(true);
-        yield return new WaitForSeconds(2f);
-        warningText.SetActive(false);
+        fightStarted = true;
 
-        medusa.ActivateBoss();
+        // 🔥 trava entrada (opcional)
+        if (bossDoor != null)
+            bossDoor.SetActive(true);
+
+        // ⚠️ aviso de batalha
+        if (warningText != null)
+            warningText.SetActive(true);
+
+        yield return new WaitForSeconds(2f);
+
+        if (warningText != null)
+            warningText.SetActive(false);
+
+        // 🐍 ativa medusa
+        if (medusa != null)
+            medusa.SetActive(true);
+        else
+            Debug.LogWarning("Medusa não foi atribuída no Inspector!");
+
+        // 🚪 fecha arena (se quiser manter o player preso)
+        if (bossDoor != null)
+            bossDoor.SetActive(true);
     }
 }

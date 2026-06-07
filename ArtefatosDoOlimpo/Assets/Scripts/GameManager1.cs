@@ -1,39 +1,40 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
 
+    [Header("Spawns")]
+    public Transform startPoint;
     public Vector3 checkpointPosition;
 
-    void Awake()
+    private void Awake()
     {
-        instance = this;
+        if (instance == null)
+            instance = this;
+        else
+            Destroy(gameObject);
     }
 
     void Start()
     {
-        GameObject player = GameObject.FindGameObjectWithTag("Player");
-        if (player != null)
-        {
-            checkpointPosition = player.transform.position;
-        }
+        if (startPoint != null)
+            checkpointPosition = startPoint.position;
     }
 
-    public void SetCheckpoint(Vector3 position)
+    public void SetCheckpoint(Vector3 pos)
     {
-        checkpointPosition = position;
+        checkpointPosition = pos;
     }
 
-    public void RespawnPlayer(GameObject player)
+    public void ResetToStart()
     {
-        player.transform.position = checkpointPosition;
+        if (startPoint != null)
+            checkpointPosition = startPoint.position;
     }
 
-    public void GameOver()
+    public Vector3 GetSpawnPosition()
     {
-        Debug.Log("GAME OVER");
-        Time.timeScale = 0f;
+        return checkpointPosition;
     }
 }

@@ -1,24 +1,38 @@
 using UnityEngine;
+using System.Collections;
 
 public class PressurePlate : MonoBehaviour
 {
     public GameObject door;
+    public GameObject warningText;
+
+    private bool activated = false;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player"))
+        if (!collision.CompareTag("Player"))
+            return;
+
+        if (activated)
+            return;
+
+        activated = true;
+
+        if (door != null)
+            door.SetActive(false);
+
+        if (warningText != null)
         {
-            Debug.Log("Placa ativada!");
-            door.SetActive(false); // abre
+            warningText.SetActive(true);
+            StartCoroutine(HideText());
         }
     }
 
-    private void OnTriggerExit2D(Collider2D collision)
+    IEnumerator HideText()
     {
-        if (collision.CompareTag("Player"))
-        {
-            Debug.Log("Placa desativada!");
-            door.SetActive(true); // fecha
-        }
+        yield return new WaitForSeconds(3f);
+
+        if (warningText != null)
+            warningText.SetActive(false);
     }
 }
