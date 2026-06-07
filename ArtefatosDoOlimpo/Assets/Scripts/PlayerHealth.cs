@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -10,7 +11,7 @@ public class PlayerHealth : MonoBehaviour
     public int lives = 3;
 
     [Header("UI")]
-    public PlayerHealthBar healthBar;
+    public HeartUI heartUI;
 
     private Rigidbody2D rb;
 
@@ -20,24 +21,13 @@ public class PlayerHealth : MonoBehaviour
 
         rb = GetComponent<Rigidbody2D>();
 
-        // Atualiza barra
-        if (healthBar != null)
-        {
-            healthBar.Set(currentHealth);
-        }
+        UpdateHearts();
     }
 
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
 
-        // Atualiza barra
-        if (healthBar != null)
-        {
-            healthBar.Set(currentHealth);
-        }
-
-        // Morreu
         if (currentHealth <= 0)
         {
             lives--;
@@ -55,22 +45,15 @@ public class PlayerHealth : MonoBehaviour
 
     void Respawn()
     {
-        // Restaura vida
         currentHealth = maxHealth;
 
-        // Atualiza barra
-        if (healthBar != null)
-        {
-            healthBar.Set(currentHealth);
-        }
+        UpdateHearts();
 
-        // Move pro checkpoint
         if (GameManager.instance != null)
         {
             transform.position = GameManager.instance.checkpointPosition;
         }
 
-        // Reseta física
         if (rb != null)
         {
             rb.linearVelocity = Vector2.zero;
@@ -82,9 +65,15 @@ public class PlayerHealth : MonoBehaviour
     {
         Debug.Log("GAME OVER");
 
-        if (GameManager.instance != null)
+        // volta pro início do jogo (troque o nome se precisar)
+        SceneManager.LoadScene("Fase1_Ares");
+    }
+
+    void UpdateHearts()
+    {
+        if (heartUI != null)
         {
-            GameManager.instance.GameOver();
+            heartUI.UpdateHearts(lives);
         }
     }
 }

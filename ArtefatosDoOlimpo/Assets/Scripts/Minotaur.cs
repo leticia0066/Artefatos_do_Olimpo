@@ -4,15 +4,29 @@ public class Minotaur : MonoBehaviour
 {
     public int health = 5;
 
+    public GameObject medalhao;
+
     public void TakeDamage(int damage)
     {
-        Debug.Log("MINOTAURO ACERTOU");
-
         health -= damage;
+
+        Debug.Log("Minotauro tomou dano! Vida: " + health);
 
         if (health <= 0)
         {
-            Destroy(gameObject);
+            Die();
         }
+    }
+
+    void Die()
+    {
+        Debug.Log("Minotauro morreu!");
+
+        if (medalhao != null)
+        {
+            medalhao.SetActive(true);
+        }
+
+        Destroy(gameObject);
     }
 }

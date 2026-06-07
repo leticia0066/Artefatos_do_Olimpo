@@ -2,14 +2,18 @@ using UnityEngine;
 
 public class Medalhao : MonoBehaviour
 {
-    public GameObject door;
+    public Door door;
 
-    void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
+            Debug.Log("Medalhão coletado!");
+
             if (door != null)
-                door.SetActive(false);
+            {
+                door.OpenDoor();
+            }
 
             Destroy(gameObject);
         }
