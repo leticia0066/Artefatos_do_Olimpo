@@ -3,13 +3,12 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     [Header("Movimento")]
-    public float speed = 8f;
-    public float acceleration = 15f;
-    public float jumpForce = 12f;
+    public float speed = 6f;
+    public float jumpForce = 10f;
 
     [Header("Ground Check")]
     public Transform groundCheck;
-    public float groundRadius = 0.2f;
+    public float groundCheckRadius = 0.2f;
     public LayerMask groundLayer;
 
     [Header("Ataque")]
@@ -19,7 +18,6 @@ public class PlayerController : MonoBehaviour
 
     private Rigidbody2D rb;
     private float moveInput;
-    private float currentSpeed;
     private bool isGrounded;
 
     void Start()
@@ -31,37 +29,57 @@ public class PlayerController : MonoBehaviour
     {
         moveInput = Input.GetAxisRaw("Horizontal");
 
-        Jump();
+        CheckGround();
+
+        if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
+        {
+            Jump();
+        }
 
         if (Input.GetKeyDown(KeyCode.Z))
         {
             Attack();
         }
-    }
-
-    void FixedUpdate()
-    {
-        GroundCheck();
-        Move();
-    }
-
-    // MOVIMENTO LISO
-    void Move()
-    {
-        float targetSpeed = moveInput * speed;
-
-        currentSpeed = Mathf.Lerp(
-            currentSpeed,
-            targetSpeed,
-            acceleration * Time.fixedDeltaTime
-        );
-
-        rb.linearVelocity = new Vector2(currentSpeed, rb.linearVelocity.y);
 
         Flip();
     }
 
-    // VIRA O PLAYER SEM ALTERAR ESCALA ORIGINAL
+    void FixedUpdate()
+    {
+        Move();
+    }
+
+    void Move()
+    {
+        rb.linearVelocity = new Vector2(
+            moveInput * speed,
+            rb.linearVelocity.y
+        );
+    }
+
+    void Jump()
+    {
+        rb.linearVelocity = new Vector2(
+            rb.linearVelocity.x,
+            jumpForce
+        );
+    }
+
+    void CheckGround()
+    {
+        if (groundCheck == null)
+        {
+            isGrounded = false;
+            return;
+        }
+
+        isGrounded = Physics2D.OverlapCircle(
+            groundCheck.position,
+            groundCheckRadius,
+            groundLayer
+        );
+    }
+
     void Flip()
     {
         if (moveInput == 0) return;
@@ -73,34 +91,16 @@ public class PlayerController : MonoBehaviour
         transform.localScale = scale;
     }
 
-    void Jump()
-    {
-        if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
-        {
-            rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
-        }
-    }
-
-    void GroundCheck()
-    {
-        if (groundCheck == null) return;
-
-        isGrounded = Physics2D.OverlapCircle(
-            groundCheck.position,
-            groundRadius,
-            groundLayer
-        );
-    }
-
     void Attack()
     {
         if (attackPoint == null) return;
 
-        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(
-            attackPoint.position,
-            attackRange,
-            enemyLayers
-        );
+        Collider2D[] hitEnemies =
+            Physics2D.OverlapCircleAll(
+                attackPoint.position,
+                attackRange,
+                enemyLayers
+            );
 
         foreach (Collider2D enemy in hitEnemies)
         {
@@ -117,16 +117,22 @@ public class PlayerController : MonoBehaviour
 
     void OnDrawGizmosSelected()
     {
-        if (attackPoint != null)
-        {
-            Gizmos.color = Color.red;
-            Gizmos.DrawWireSphere(attackPoint.position, attackRange);
-        }
-
         if (groundCheck != null)
         {
             Gizmos.color = Color.green;
-            Gizmos.DrawWireSphere(groundCheck.position, groundRadius);
+            Gizmos.DrawWireSphere(
+                groundCheck.position,
+                groundCheckRadius
+            );
+        }
+
+        if (attackPoint != null)
+        {
+            Gizmos.color = Color.red;
+            Gizmos.DrawWireSphere(
+                attackPoint.position,
+                attackRange
+            );
         }
     }
 }
