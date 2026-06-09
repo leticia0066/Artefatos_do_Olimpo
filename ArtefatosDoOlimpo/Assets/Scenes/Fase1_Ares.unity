@@ -471,8 +471,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46fe56f37fe5dc14390ad14e5a7f73e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerHealth
-  maxHealth: 5
-  currentHealth: 0
+  maxHealth: 6
+  currentHealth: 6
   lives: 3
   heartUI: {fileID: 1430486812}
 --- !u!114 &350663620
@@ -8109,6 +8109,7 @@ MonoBehaviour:
   - {fileID: 1078062798}
   - {fileID: 1928052680}
   fullHeart: {fileID: 6636868772901572725, guid: f211e2726cfd86d44829c090ba06f89b, type: 3}
+  halfHeart: {fileID: -537459108842120825, guid: 74692982c91b81748b008bfbb856ab2d, type: 3}
   emptyHeart: {fileID: -7317531068297255699, guid: ae367b93f9d84064f9474086bd08e900, type: 3}
 --- !u!4 &1430486813
 Transform:

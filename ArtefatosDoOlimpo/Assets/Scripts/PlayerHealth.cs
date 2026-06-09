@@ -4,7 +4,7 @@ using UnityEngine;
 public class PlayerHealth : MonoBehaviour
 {
     [Header("Vida")]
-    public int maxHealth = 5;
+    public int maxHealth = 6;
     public int currentHealth;
 
     [Header("Vidas")]
@@ -19,6 +19,8 @@ public class PlayerHealth : MonoBehaviour
 
     void Start()
     {
+        // força valores corretos
+        maxHealth = 6;
         currentHealth = maxHealth;
 
         rb = GetComponent<Rigidbody2D>();
@@ -32,7 +34,8 @@ public class PlayerHealth : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
-        if (isDead) return;
+        if (isDead)
+            return;
 
         currentHealth -= damage;
 
@@ -59,7 +62,9 @@ public class PlayerHealth : MonoBehaviour
     void UpdateUI()
     {
         if (heartUI != null)
-            heartUI.UpdateHearts(lives);
+        {
+            heartUI.UpdateHearts(currentHealth);
+        }
     }
 
     IEnumerator RespawnToCheckpoint()
@@ -100,7 +105,6 @@ public class PlayerHealth : MonoBehaviour
 
         yield return new WaitForSeconds(0.8f);
 
-        // 🔥 RESET TOTAL DE VIDAS
         lives = 3;
         currentHealth = maxHealth;
 
