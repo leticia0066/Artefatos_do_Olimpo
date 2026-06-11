@@ -1,16 +1,10 @@
 fileFormatVersion: 2
-guid: 74692982c91b81748b008bfbb856ab2d
+guid: 9fb29429fba954041b7b54e7d052e0f8
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -537459108842120825
-    second: Captura de tela 2026-06-09 101625_0
-  - first:
-      213: 4286148707661118492
-    second: Captura de tela 2026-06-09 101625_1
-  - first:
-      213: 3513345115648722602
-    second: Captura de tela 2026-06-09 101625_2
+      213: 3725405004627043663
+    second: "cora\xE7\xE3ovida meio_0"
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -102,56 +96,17 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WindowsStoreApps
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Captura de tela 2026-06-09 101625_0
+      name: "cora\xE7\xE3ovida meio_0"
       rect:
         serializedVersion: 2
-        x: 3
-        y: 65
-        width: 17
-        height: 29
+        x: 47
+        y: 18
+        width: 317
+        height: 282
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -160,52 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 789da20c9cf8a88f0800000000000000
-      internalID: -537459108842120825
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Captura de tela 2026-06-09 101625_1
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 7
-        width: 208
-        height: 173
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: c1cf3a66a857b7b30800000000000000
-      internalID: 4286148707661118492
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Captura de tela 2026-06-09 101625_2
-      rect:
-        serializedVersion: 2
-        x: 227
-        y: 70
-        width: 7
-        height: 21
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: aa68897a4c8e1c030800000000000000
-      internalID: 3513345115648722602
+      spriteID: f45e1491d1c43b330800000000000000
+      internalID: 3725405004627043663
       vertices: []
       indices: 
       edges: []
@@ -224,9 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Captura de tela 2026-06-09 101625_0: -537459108842120825
-      Captura de tela 2026-06-09 101625_1: 4286148707661118492
-      Captura de tela 2026-06-09 101625_2: 3513345115648722602
+      "cora\xE7\xE3ovida meio_0": 3725405004627043663
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

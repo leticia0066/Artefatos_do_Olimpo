@@ -472,9 +472,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerHealth
   maxHealth: 6
-  currentHealth: 6
-  lives: 3
-  heartUI: {fileID: 1430486812}
+  currentHealth: 0
 --- !u!114 &350663620
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6112,10 +6110,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 795792c7ec98fa044b1d9601d014554b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpikeTrap
-  upHeight: 1.5
-  speed: 3
   damage: 1
-  delay: 1
 --- !u!61 &538830204
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7007,7 +7002,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -231, y: 135}
+  m_AnchoredPosition: {x: -249.7, y: 145.90005}
   m_SizeDelta: {x: 38.3075, y: 38.3075}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1078062797
@@ -7038,7 +7033,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 6636868772901572725, guid: f211e2726cfd86d44829c090ba06f89b, type: 3}
+  m_Sprite: {fileID: -4642235133731878116, guid: 88660f339d67bd04aabd5c75247ea2f5, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -7758,6 +7753,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
   startPoint: {fileID: 0}
   checkpointPosition: {x: 0, y: 0, z: 0}
+  maxHealth: 6
+  currentHealth: 0
 --- !u!1 &1304973653
 GameObject:
   m_ObjectHideFlags: 0
@@ -8000,6 +7997,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GameManager1
   startPoint: {fileID: 0}
   checkpointPosition: {x: 0, y: 0, z: 0}
+  maxHealth: 6
+  currentHealth: 0
 --- !u!1 &1425719044
 GameObject:
   m_ObjectHideFlags: 0
@@ -8108,9 +8107,9 @@ MonoBehaviour:
   - {fileID: 1958415298}
   - {fileID: 1078062798}
   - {fileID: 1928052680}
-  fullHeart: {fileID: 6636868772901572725, guid: f211e2726cfd86d44829c090ba06f89b, type: 3}
-  halfHeart: {fileID: -537459108842120825, guid: 74692982c91b81748b008bfbb856ab2d, type: 3}
-  emptyHeart: {fileID: -7317531068297255699, guid: ae367b93f9d84064f9474086bd08e900, type: 3}
+  fullHeart: {fileID: -4642235133731878116, guid: 88660f339d67bd04aabd5c75247ea2f5, type: 3}
+  halfHeart: {fileID: 3725405004627043663, guid: 9fb29429fba954041b7b54e7d052e0f8, type: 3}
+  emptyHeart: {fileID: 3869177361480245116, guid: 23c3d0d8fafba854284fe5a231bd2064, type: 3}
 --- !u!4 &1430486813
 Transform:
   m_ObjectHideFlags: 0
@@ -8648,7 +8647,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 6636868772901572725, guid: f211e2726cfd86d44829c090ba06f89b, type: 3}
+  m_Sprite: {fileID: -4642235133731878116, guid: 88660f339d67bd04aabd5c75247ea2f5, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -8682,7 +8681,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -191, y: 133.19997}
+  m_AnchoredPosition: {x: -209.7, y: 144.1}
   m_SizeDelta: {x: 36.2173, y: 36.2176}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1931882243
@@ -8872,7 +8871,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -269.16003, y: 134.85402}
+  m_AnchoredPosition: {x: -287.86005, y: 145.75407}
   m_SizeDelta: {x: 38.014, y: 38.0151}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1958415297
@@ -8903,7 +8902,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 6636868772901572725, guid: f211e2726cfd86d44829c090ba06f89b, type: 3}
+  m_Sprite: {fileID: -4642235133731878116, guid: 88660f339d67bd04aabd5c75247ea2f5, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -8913,6 +8912,52 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!1 &1970676935
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1970676937}
+  - component: {fileID: 1970676936}
+  m_Layer: 0
+  m_Name: CheckpointManager
+  m_TagString: Untagged
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1970676936
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1970676935}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1171b86a2f75fa043bfc89c17d8ca7da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CheckpointManager
+  currentCheckpointPosition: {x: 0, y: 0, z: 0}
+  startPosition: {x: 0, y: 0, z: 0}
+--- !u!4 &1970676937
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1970676935}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.16, y: -3.49, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1973670732
 GameObject:
   m_ObjectHideFlags: 0
@@ -9359,3 +9404,4 @@ SceneRoots:
   - {fileID: 255351608}
   - {fileID: 986585493}
   - {fileID: 1430486813}
+  - {fileID: 1970676937}

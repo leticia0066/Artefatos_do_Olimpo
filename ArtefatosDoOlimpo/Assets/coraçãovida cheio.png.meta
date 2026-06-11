@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: f211e2726cfd86d44829c090ba06f89b
+guid: 88660f339d67bd04aabd5c75247ea2f5
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6636868772901572725
-    second: coracao cheio_0
+      213: -4642235133731878116
+    second: "cora\xE7\xE3ovida cheio_0"
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: coracao cheio_0
+      name: "cora\xE7\xE3ovida cheio_0"
       rect:
         serializedVersion: 2
-        x: 3
-        y: 3
-        width: 39
-        height: 47
+        x: 31
+        y: 26
+        width: 317
+        height: 282
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5705ead3cf4ea1c50800000000000000
-      internalID: 6636868772901572725
+      spriteID: c1bc212ddb7739fb0800000000000000
+      internalID: -4642235133731878116
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      coracao cheio_0: 6636868772901572725
+      "cora\xE7\xE3ovida cheio_0": -4642235133731878116
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

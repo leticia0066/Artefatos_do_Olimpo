@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: ae367b93f9d84064f9474086bd08e900
+guid: 23c3d0d8fafba854284fe5a231bd2064
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7317531068297255699
-    second: coracao seco_0
+      213: 3869177361480245116
+    second: "cora\xE7\xE3ovida seco_0"
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: coracao seco_0
+      name: "cora\xE7\xE3ovida seco_0"
       rect:
         serializedVersion: 2
-        x: 0
-        y: 1
-        width: 39
-        height: 37
+        x: 18
+        y: 21
+        width: 317
+        height: 282
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: de4e1496348e27a90800000000000000
-      internalID: -7317531068297255699
+      spriteID: c7f530c7f4412b530800000000000000
+      internalID: 3869177361480245116
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      coracao seco_0: -7317531068297255699
+      "cora\xE7\xE3ovida seco_0": 3869177361480245116
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
