@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class WindZone : MonoBehaviour
+public class WindArea : MonoBehaviour
 {
     public float force = 10f;
     public Vector2 direction = Vector2.left;

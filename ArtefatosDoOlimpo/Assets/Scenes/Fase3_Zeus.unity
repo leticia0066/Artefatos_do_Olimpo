@@ -243,7 +243,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -269.16003, y: 134.85402}
+  m_AnchoredPosition: {x: -162, y: 77}
   m_SizeDelta: {x: 38.014, y: 38.0151}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &106711069
@@ -266,7 +266,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 6636868772901572725, guid: f211e2726cfd86d44829c090ba06f89b, type: 3}
+  m_Sprite: {fileID: -4642235133731878116, guid: 88660f339d67bd04aabd5c75247ea2f5, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -444,7 +444,7 @@ GameObject:
   - component: {fileID: 372158819}
   - component: {fileID: 372158823}
   - component: {fileID: 372158822}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Zeus
   m_TagString: Untagged
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
@@ -716,7 +716,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 582785915}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: ShootPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1067,7 +1067,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -231, y: 135}
+  m_AnchoredPosition: {x: -123.839966, y: 77.14598}
   m_SizeDelta: {x: 38.3075, y: 38.3075}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &774165913
@@ -1090,7 +1090,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 6636868772901572725, guid: f211e2726cfd86d44829c090ba06f89b, type: 3}
+  m_Sprite: {fileID: -4642235133731878116, guid: 88660f339d67bd04aabd5c75247ea2f5, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1142,7 +1142,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -191, y: 133.19997}
+  m_AnchoredPosition: {x: -83.839966, y: 75.34595}
   m_SizeDelta: {x: 36.2173, y: 36.2176}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &777019311
@@ -1165,7 +1165,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 6636868772901572725, guid: f211e2726cfd86d44829c090ba06f89b, type: 3}
+  m_Sprite: {fileID: -4642235133731878116, guid: 88660f339d67bd04aabd5c75247ea2f5, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2009,9 +2009,9 @@ MonoBehaviour:
   - {fileID: 106711069}
   - {fileID: 774165913}
   - {fileID: 777019311}
-  fullHeart: {fileID: 6636868772901572725, guid: f211e2726cfd86d44829c090ba06f89b, type: 3}
-  halfHeart: {fileID: -537459108842120825, guid: 74692982c91b81748b008bfbb856ab2d, type: 3}
-  emptyHeart: {fileID: -7317531068297255699, guid: ae367b93f9d84064f9474086bd08e900, type: 3}
+  fullHeart: {fileID: -4642235133731878116, guid: 88660f339d67bd04aabd5c75247ea2f5, type: 3}
+  halfHeart: {fileID: 3725405004627043663, guid: 9fb29429fba954041b7b54e7d052e0f8, type: 3}
+  emptyHeart: {fileID: 3869177361480245116, guid: 23c3d0d8fafba854284fe5a231bd2064, type: 3}
 --- !u!4 &1472533598
 Transform:
   m_ObjectHideFlags: 0
@@ -7635,8 +7635,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerHealth
   maxHealth: 6
   currentHealth: 6
-  lives: 3
-  heartUI: {fileID: 1472533597}
 --- !u!114 &2031193740
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7655,12 +7653,12 @@ MonoBehaviour:
   groundCheckRadius: 0.2
   groundLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
   attackPoint: {fileID: 1345367703}
   attackRange: 1
   enemyLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 8
 --- !u!61 &2031193741
 BoxCollider2D:
   m_ObjectHideFlags: 0
