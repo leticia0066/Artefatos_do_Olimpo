@@ -16,13 +16,22 @@ public class PlayerController : MonoBehaviour
     public float attackRange = 0.5f;
     public LayerMask enemyLayers;
 
+    [Header("Dano por Queda")]
+    public float minFallHeight = 5f;
+    public int fallDamage = 1;
+
     private Rigidbody2D rb;
     private float moveInput;
     private bool isGrounded;
 
+    private bool wasGrounded;
+    private float highestY;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+
+        highestY = transform.position.y;
     }
 
     void Update()
@@ -30,6 +39,23 @@ public class PlayerController : MonoBehaviour
         moveInput = Input.GetAxisRaw("Horizontal");
 
         CheckGround();
+
+        // Guarda altura quando estiver no ar
+        if (!isGrounded)
+        {
+            if (transform.position.y > highestY)
+            {
+                highestY = transform.position.y;
+            }
+        }
+
+        // Caiu no chão
+        if (!wasGrounded && isGrounded)
+        {
+            CheckFallDamage();
+        }
+
+        wasGrounded = isGrounded;
 
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
         {
@@ -51,18 +77,22 @@ public class PlayerController : MonoBehaviour
 
     void Move()
     {
-        rb.linearVelocity = new Vector2(
-            moveInput * speed,
-            rb.linearVelocity.y
-        );
+        rb.linearVelocity =
+            new Vector2(
+                moveInput * speed,
+                rb.linearVelocity.y
+            );
     }
 
     void Jump()
     {
-        rb.linearVelocity = new Vector2(
-            rb.linearVelocity.x,
-            jumpForce
-        );
+        highestY = transform.position.y;
+
+        rb.linearVelocity =
+            new Vector2(
+                rb.linearVelocity.x,
+                jumpForce
+            );
     }
 
     void CheckGround()
@@ -73,27 +103,53 @@ public class PlayerController : MonoBehaviour
             return;
         }
 
-        isGrounded = Physics2D.OverlapCircle(
-            groundCheck.position,
-            groundCheckRadius,
-            groundLayer
-        );
+        Collider2D ground =
+            Physics2D.OverlapCircle(
+                groundCheck.position,
+                groundCheckRadius,
+                groundLayer
+            );
+
+        isGrounded = (ground != null);
+    }
+
+    void CheckFallDamage()
+    {
+        float fallDistance =
+            highestY - transform.position.y;
+
+        if (fallDistance >= minFallHeight)
+        {
+            Debug.Log("Tomou dano por queda!");
+
+            SendMessage(
+                "TakeDamage",
+                fallDamage,
+                SendMessageOptions.DontRequireReceiver
+            );
+        }
+
+        highestY = transform.position.y;
     }
 
     void Flip()
     {
-        if (moveInput == 0) return;
+        if (moveInput == 0)
+            return;
 
         Vector3 scale = transform.localScale;
 
-        scale.x = Mathf.Abs(scale.x) * Mathf.Sign(moveInput);
+        scale.x =
+            Mathf.Abs(scale.x)
+            * Mathf.Sign(moveInput);
 
         transform.localScale = scale;
     }
 
     void Attack()
     {
-        if (attackPoint == null) return;
+        if (attackPoint == null)
+            return;
 
         Collider2D[] hitEnemies =
             Physics2D.OverlapCircleAll(
@@ -120,6 +176,7 @@ public class PlayerController : MonoBehaviour
         if (groundCheck != null)
         {
             Gizmos.color = Color.green;
+
             Gizmos.DrawWireSphere(
                 groundCheck.position,
                 groundCheckRadius
@@ -129,6 +186,7 @@ public class PlayerController : MonoBehaviour
         if (attackPoint != null)
         {
             Gizmos.color = Color.red;
+
             Gizmos.DrawWireSphere(
                 attackPoint.position,
                 attackRange

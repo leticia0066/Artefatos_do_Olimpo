@@ -9,6 +9,8 @@ public class MovingPlatform : MonoBehaviour
 
     private Vector3 target;
 
+    private Transform playerOnPlatform;
+
     void Start()
     {
         target = pointB.position;
@@ -16,39 +18,61 @@ public class MovingPlatform : MonoBehaviour
 
     void Update()
     {
+        Vector3 oldPos = transform.position;
+
         transform.position = Vector3.MoveTowards(
             transform.position,
             target,
             speed * Time.deltaTime
         );
 
-        if (Vector3.Distance(transform.position, target) < 0.1f)
+        Vector3 delta =
+            transform.position - oldPos;
+
+        // move o player junto horizontalmente
+        if (playerOnPlatform != null)
         {
-            if (target == pointA.position)
-            {
-                target = pointB.position;
-            }
-            else
-            {
-                target = pointA.position;
-            }
+            playerOnPlatform.position += delta;
+        }
+
+        if (Vector3.Distance(
+            transform.position,
+            target
+        ) < 0.1f)
+        {
+            target =
+                target == pointA.position
+                ? pointB.position
+                : pointA.position;
         }
     }
 
-    // Faz o player acompanhar a plataforma
-    void OnCollisionEnter2D(Collision2D collision)
+    void OnCollisionEnter2D(
+        Collision2D collision
+    )
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (
+            collision.gameObject.CompareTag(
+                "Player"
+            )
+        )
         {
-            collision.transform.SetParent(transform);
+            playerOnPlatform =
+                collision.transform;
         }
     }
 
-    void OnCollisionExit2D(Collision2D collision)
+    void OnCollisionExit2D(
+        Collision2D collision
+    )
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (
+            collision.gameObject.CompareTag(
+                "Player"
+            )
+        )
         {
-            collision.transform.SetParent(null);
+            playerOnPlatform = null;
         }
     }
 }
