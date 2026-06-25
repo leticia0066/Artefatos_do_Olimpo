@@ -9,30 +9,17 @@ public class HeartUI : MonoBehaviour
     public Sprite halfHeart;
     public Sprite emptyHeart;
 
-    private PlayerHealth player;
-
-    private void Start()
+    public void UpdateHearts(int health)
     {
-        player = PlayerHealth.Instance;
-
-        player.OnHealthChanged += UpdateHearts;
-
-        UpdateHearts(); // atualiza no início
-    }
-
-    void UpdateHearts()
-    {
-        int health = player.currentHealth;
-
         for (int i = 0; i < hearts.Length; i++)
         {
-            int heartValue = health - (i * 2);
+            int hpForHeart = health - (i * 2);
 
-            if (heartValue >= 2)
+            if (hpForHeart >= 2)
             {
                 hearts[i].sprite = fullHeart;
             }
-            else if (heartValue == 1)
+            else if (hpForHeart == 1)
             {
                 hearts[i].sprite = halfHeart;
             }
