@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 4c03df4a332a6524fa10fd8021f9521c
+guid: 15ea0d67f4f94144db92989ea051d856
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4385809225407715320
-    second: Captura_de_tela_2026-05-26_191354-removebg-preview_0
+      213: -6540881060410467394
+    second: botaosair (2)_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -96,17 +96,56 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Captura_de_tela_2026-05-26_191354-removebg-preview_0
+      name: botaosair (2)_0
       rect:
         serializedVersion: 2
-        x: 24
-        y: 53
-        width: 226
-        height: 51
+        x: 0
+        y: 0
+        width: 780
+        height: 194
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +154,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 8f7de05e0468ddc30800000000000000
-      internalID: 4385809225407715320
+      spriteID: ebb5724a45f1a35a0800000000000000
+      internalID: -6540881060410467394
       vertices: []
       indices: 
       edges: []
@@ -135,7 +174,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Captura_de_tela_2026-05-26_191354-removebg-preview_0: 4385809225407715320
+      botaosair (2)_0: -6540881060410467394
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
