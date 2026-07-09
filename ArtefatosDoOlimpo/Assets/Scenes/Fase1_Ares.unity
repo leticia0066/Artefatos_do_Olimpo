@@ -12275,7 +12275,7 @@ Camera:
   far clip plane: 1000
   field of view: 34
   orthographic: 1
-  orthographic size: 15
+  orthographic size: 33.8
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -12300,7 +12300,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -128, y: 6.4, z: -10}
+  m_LocalPosition: {x: -97.7, y: 19.6, z: -10}
   m_LocalScale: {x: 1.1, y: 1.5159374, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -14075,8 +14075,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1127.7672, y: 655.2539}
-  m_SizeDelta: {x: 98.7357, y: 98.7357}
+  m_AnchoredPosition: {x: -237.2267, y: 228.1666}
+  m_SizeDelta: {x: 46.2116, y: 46.2116}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1078062797
 CanvasRenderer:
@@ -16871,8 +16871,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1026.8627, y: 654.89795}
-  m_SizeDelta: {x: 95.5912, y: 94.8034}
+  m_AnchoredPosition: {x: -190, y: 228}
+  m_SizeDelta: {x: 44.7399, y: 44.3712}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1931882243
 GameObject:
@@ -17061,8 +17061,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1226.1229, y: 654.87756}
-  m_SizeDelta: {x: 97.9789, y: 97.9822}
+  m_AnchoredPosition: {x: -283.26047, y: 227.99045}
+  m_SizeDelta: {x: 45.8574, y: 45.8589}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1958415297
 CanvasRenderer:
