@@ -3,15 +3,17 @@ using UnityEngine.UI;
 
 public class ControleVolume : MonoBehaviour
 {
-    public Slider sliderVolume;
+    public Slider slider;
+
 
     void Start()
     {
-        sliderVolume.value = AudioListener.volume;
+        slider.value = AudioListener.volume;
     }
 
-    public void AlterarVolume()
+
+    public void MudarVolume()
     {
-        AudioListener.volume = sliderVolume.value;
+        AudioListener.volume = slider.value;
     }
 }

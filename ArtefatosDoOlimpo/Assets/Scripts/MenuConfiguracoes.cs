@@ -1,16 +1,22 @@
 using UnityEngine;
 
-public class MenuConfiguracoes : MonoBehaviour
+public class MenuConfiguraçoes : MonoBehaviour
 {
-    public GameObject painelConfiguracoes;
+    public GameObject painel;
 
-    public void AbrirConfiguracoes()
+
+    public void AbrirPainel()
     {
-        painelConfiguracoes.SetActive(true);
+        painel.SetActive(true);
+
+        Time.timeScale = 0f;
     }
 
-    public void FecharConfiguracoes()
+
+    public void FecharPainel()
     {
-        painelConfiguracoes.SetActive(false);
+        painel.SetActive(false);
+
+        Time.timeScale = 1f;
     }
 }
