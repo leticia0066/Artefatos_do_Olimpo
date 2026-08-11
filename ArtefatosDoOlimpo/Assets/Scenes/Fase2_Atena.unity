@@ -350,6 +350,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_VertexColorAlwaysGammaSpace: 0
+  m_UseReflectionProbes: 0
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
@@ -444,7 +445,7 @@ BoxCollider2D:
   m_EdgeRadius: 0
 --- !u!212 &227940009
 SpriteRenderer:
-  serializedVersion: 2
+  serializedVersion: 3
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -501,6 +502,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+  m_BlendShapeWeights: []
 --- !u!4 &227940010
 Transform:
   m_ObjectHideFlags: 0
@@ -741,7 +743,7 @@ Rigidbody2D:
   m_Constraints: 4
 --- !u!212 &551523089
 SpriteRenderer:
-  serializedVersion: 2
+  serializedVersion: 3
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -798,6 +800,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+  m_BlendShapeWeights: []
 --- !u!4 &551523090
 Transform:
   m_ObjectHideFlags: 0
@@ -985,7 +988,7 @@ BoxCollider2D:
   m_EdgeRadius: 0
 --- !u!212 &610328104
 SpriteRenderer:
-  serializedVersion: 2
+  serializedVersion: 3
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1042,6 +1045,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+  m_BlendShapeWeights: []
 --- !u!4 &610328105
 Transform:
   m_ObjectHideFlags: 0
@@ -1209,6 +1213,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_VertexColorAlwaysGammaSpace: 0
+  m_UseReflectionProbes: 0
   m_AdditionalShaderChannelsFlag: 0
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
@@ -1830,7 +1835,7 @@ BoxCollider2D:
   m_EdgeRadius: 0
 --- !u!212 &1009209837
 SpriteRenderer:
-  serializedVersion: 2
+  serializedVersion: 3
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1887,6 +1892,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+  m_BlendShapeWeights: []
 --- !u!4 &1009209838
 Transform:
   m_ObjectHideFlags: 0
@@ -2013,7 +2019,7 @@ BoxCollider2D:
   m_EdgeRadius: 0
 --- !u!212 &1149720906
 SpriteRenderer:
-  serializedVersion: 2
+  serializedVersion: 3
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -2070,6 +2076,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+  m_BlendShapeWeights: []
 --- !u!4 &1149720907
 Transform:
   m_ObjectHideFlags: 0
@@ -2079,8 +2086,8 @@ Transform:
   m_GameObject: {fileID: 1149720902}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -31.3561, y: -3.61, z: 0}
-  m_LocalScale: {x: 6.277901, y: 1.0541, z: 1}
+  m_LocalPosition: {x: -32.4926, y: -3.61, z: 0}
+  m_LocalScale: {x: 8.551129, y: 1.0541, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -2151,7 +2158,7 @@ BoxCollider2D:
   m_EdgeRadius: 0
 --- !u!212 &1185027406
 SpriteRenderer:
-  serializedVersion: 2
+  serializedVersion: 3
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -2208,6 +2215,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+  m_BlendShapeWeights: []
 --- !u!4 &1185027407
 Transform:
   m_ObjectHideFlags: 0
@@ -2258,7 +2266,7 @@ MonoBehaviour:
   warningText: {fileID: 0}
 --- !u!212 &1189528343
 SpriteRenderer:
-  serializedVersion: 2
+  serializedVersion: 3
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -2315,6 +2323,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+  m_BlendShapeWeights: []
 --- !u!4 &1189528344
 Transform:
   m_ObjectHideFlags: 0
@@ -2428,7 +2437,7 @@ GameObject:
   m_IsActive: 1
 --- !u!212 &1397604056
 SpriteRenderer:
-  serializedVersion: 2
+  serializedVersion: 3
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -2485,6 +2494,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+  m_BlendShapeWeights: []
 --- !u!4 &1397604057
 Transform:
   m_ObjectHideFlags: 0
@@ -2687,7 +2697,7 @@ BoxCollider2D:
   m_EdgeRadius: 0
 --- !u!212 &1464408739
 SpriteRenderer:
-  serializedVersion: 2
+  serializedVersion: 3
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -2744,6 +2754,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+  m_BlendShapeWeights: []
 --- !u!4 &1464408740
 Transform:
   m_ObjectHideFlags: 0
@@ -2844,8 +2855,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.0025024, y: 0.00049973}
-  m_SizeDelta: {x: 558.99, y: 314.6}
+  m_AnchoredPosition: {x: 0, y: 0.0000076293945}
+  m_SizeDelta: {x: 1102, y: 505}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1570891944
 GameObject:
@@ -3175,7 +3186,7 @@ BoxCollider2D:
   m_EdgeRadius: 0
 --- !u!212 &1763209477
 SpriteRenderer:
-  serializedVersion: 2
+  serializedVersion: 3
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -3232,6 +3243,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+  m_BlendShapeWeights: []
 --- !u!4 &1763209478
 Transform:
   m_ObjectHideFlags: 0
@@ -3466,7 +3478,7 @@ BoxCollider2D:
   m_EdgeRadius: 0
 --- !u!212 &1801283213
 SpriteRenderer:
-  serializedVersion: 2
+  serializedVersion: 3
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -3523,6 +3535,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+  m_BlendShapeWeights: []
 --- !u!4 &1801283214
 Transform:
   m_ObjectHideFlags: 0
@@ -8703,7 +8716,7 @@ BoxCollider2D:
   m_EdgeRadius: 0
 --- !u!212 &2124260718
 SpriteRenderer:
-  serializedVersion: 2
+  serializedVersion: 3
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -8760,6 +8773,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+  m_BlendShapeWeights: []
 --- !u!4 &2124260719
 Transform:
   m_ObjectHideFlags: 0
