@@ -1,25 +1,22 @@
 fileFormatVersion: 2
-guid: 65f0688cc2a34f044a1e3fbd8f4383bf
+guid: 63497e55181859841bfe6b61dfa6f04e
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7399533318584292489
-    second: tile_0
+      213: -4090538801371409741
+    second: tile_unity_3x2_238px_0
   - first:
-      213: 7713819393718715255
-    second: tile_1
+      213: -5296229946714503352
+    second: tile_unity_3x2_238px_1
   - first:
-      213: -7289178230066185966
-    second: tile_2
+      213: 4208893714364707612
+    second: tile_unity_3x2_238px_2
   - first:
-      213: -113938230342917849
-    second: tile_3
+      213: 3144845367319889303
+    second: tile_unity_3x2_238px_3
   - first:
-      213: -3718020969999653077
-    second: tile_4
-  - first:
-      213: -4473554079132131015
-    second: tile_5
+      213: 7263305217687130510
+    second: tile_unity_3x2_238px_4
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -63,10 +60,10 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 238
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -99,7 +96,85 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
     buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: VisionOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: tvOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -115,35 +190,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: tile_0
+      name: tile_unity_3x2_238px_0
       rect:
         serializedVersion: 2
-        x: 198
-        y: 452
-        width: 239
-        height: 237
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 98452ed495c60b660800000000000000
-      internalID: 7399533318584292489
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: tile_1
-      rect:
-        serializedVersion: 2
-        x: 443
-        y: 451
+        x: 0
+        y: 238
         width: 238
-        height: 236
+        height: 238
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -152,20 +205,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 7738f187eddfc0b60800000000000000
-      internalID: 7713819393718715255
+      spriteID: 3b21e4cf1ac7b37c0800000000000000
+      internalID: -4090538801371409741
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tile_2
+      name: tile_unity_3x2_238px_1
       rect:
         serializedVersion: 2
-        x: 685
-        y: 449
-        width: 239
-        height: 236
+        x: 238
+        y: 238
+        width: 238
+        height: 238
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -174,20 +227,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 219f46cf403a7da90800000000000000
-      internalID: -7289178230066185966
+      spriteID: 847cb419ce20086b0800000000000000
+      internalID: -5296229946714503352
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tile_3
+      name: tile_unity_3x2_238px_2
       rect:
         serializedVersion: 2
-        x: 198
-        y: 200
-        width: 237
-        height: 237
+        x: 476
+        y: 238
+        width: 238
+        height: 238
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -196,20 +249,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 721e21e78c53b6ef0800000000000000
-      internalID: -113938230342917849
+      spriteID: c133516988ef86a30800000000000000
+      internalID: 4208893714364707612
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tile_4
+      name: tile_unity_3x2_238px_3
       rect:
         serializedVersion: 2
-        x: 442
-        y: 202
-        width: 236
-        height: 237
+        x: 0
+        y: 0
+        width: 238
+        height: 238
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -218,20 +271,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b27a7bf60afe66cc0800000000000000
-      internalID: -3718020969999653077
+      spriteID: 79582a0133cb4ab20800000000000000
+      internalID: 3144845367319889303
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tile_5
+      name: tile_unity_3x2_238px_4
       rect:
         serializedVersion: 2
-        x: 686
-        y: 204
-        width: 236
-        height: 236
+        x: 238
+        y: 0
+        width: 238
+        height: 238
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -240,30 +293,30 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 93164d5544ebae1c0800000000000000
-      internalID: -4473554079132131015
+      spriteID: e819b73ec917cc460800000000000000
+      internalID: 7263305217687130510
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tile_6
+      name: tile_unity_3x2_238px_5
       rect:
         serializedVersion: 2
-        x: 198
-        y: 205
-        width: 243
-        height: 235
+        x: 476
+        y: 0
+        width: 238
+        height: 238
       alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 10, w: 0}
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: edb9e8154fac33a41bae58d38ea3df4a
-      internalID: -720386537
+      spriteID: 295660e942982c04ca1dd02505f54f29
+      internalID: -995334718
       vertices: []
       indices: 
       edges: []
@@ -272,7 +325,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 70d2f2b88909969458b211bd37ec9102
+    spriteID: 6b3a0e4babb7e2c46b75584cf64560a7
     internalID: 0
     vertices: []
     indices: 
@@ -281,18 +334,15 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries:
-      - key: SpriteEditor.SliceOnImport
-        value: False
       - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":3.0,"y":2.0},"gridSpriteSize":{"x":265.0,"y":262.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":3.0,"y":2.0},"gridSpriteSize":{"x":238.0,"y":238.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      tile_0: 7399533318584292489
-      tile_1: 7713819393718715255
-      tile_2: -7289178230066185966
-      tile_3: -113938230342917849
-      tile_4: -3718020969999653077
-      tile_5: -4473554079132131015
-      tile_6: -720386537
+      tile_unity_3x2_238px_0: -4090538801371409741
+      tile_unity_3x2_238px_1: -5296229946714503352
+      tile_unity_3x2_238px_2: 4208893714364707612
+      tile_unity_3x2_238px_3: 3144845367319889303
+      tile_unity_3x2_238px_4: 7263305217687130510
+      tile_unity_3x2_238px_5: -995334718
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
