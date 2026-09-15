@@ -1,3 +1,4 @@
+
 using System.Collections;
 using UnityEngine;
 
@@ -43,14 +44,14 @@ public class PlayerHealth : MonoBehaviour
 
         UpdateUI();
 
-        // Ainda tem vida -> checkpoint
+        
         if (currentHealth > 0)
         {
             StartCoroutine(RespawnAfterHit());
             return;
         }
 
-        // HP zerou
+       
         lives--;
 
         if (lives > 0)
@@ -71,6 +72,8 @@ public class PlayerHealth : MonoBehaviour
         }
     }
 
+    
+
     IEnumerator RespawnAfterHit()
     {
         isDead = true;
@@ -85,10 +88,15 @@ public class PlayerHealth : MonoBehaviour
                 GameManager.instance.GetSpawnPosition();
         }
 
+      
+        RespawnCoins();
+
         yield return new WaitForSeconds(0.1f);
 
         isDead = false;
     }
+
+   
 
     IEnumerator RespawnToCheckpoint()
     {
@@ -107,6 +115,9 @@ public class PlayerHealth : MonoBehaviour
                 GameManager.instance.GetSpawnPosition();
         }
 
+        
+        RespawnCoins();
+
         currentHealth = maxHealth;
 
         UpdateUI();
@@ -115,6 +126,8 @@ public class PlayerHealth : MonoBehaviour
 
         isDead = false;
     }
+
+ 
 
     IEnumerator RespawnToStart()
     {
@@ -138,10 +151,33 @@ public class PlayerHealth : MonoBehaviour
                 GameManager.instance.GetSpawnPosition();
         }
 
+        
+        RespawnCoins();
+
         UpdateUI();
 
         yield return new WaitForSeconds(0.2f);
 
         isDead = false;
     }
+
+ 
+
+    void RespawnCoins()
+    {
+        CoinRespawner respawner =
+            FindFirstObjectByType<CoinRespawner>();
+
+        if (respawner != null)
+        {
+            respawner.RespawnAllCoins();
+        }
+        else
+        {
+            Debug.LogWarning(
+                "CoinRespawner não encontrado na cena!"
+            );
+        }
+    }
 }
+

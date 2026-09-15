@@ -1,3 +1,4 @@
+
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -19,32 +20,52 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D rb;
     private float moveInput;
     private bool isGrounded;
-    private bool wasGrounded;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+
+        if (rb == null)
+        {
+            Debug.LogError("ERRO: O Player não possui Rigidbody2D!");
+        }
+
+        if (groundCheck == null)
+        {
+            Debug.LogError("ERRO: GroundCheck não foi colocado no PlayerController!");
+        }
     }
 
     void Update()
     {
+        // Movimento horizontal
         moveInput = Input.GetAxisRaw("Horizontal");
 
+        // Verifica se está no chão
         CheckGround();
 
-        if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
+        // Pulo
+        if (Input.GetKeyDown(KeyCode.Space))
         {
-            Jump();
+            Debug.Log("ESPAÇO PRESSIONADO | IsGrounded = " + isGrounded);
+
+            if (isGrounded)
+            {
+                Jump();
+            }
+            else
+            {
+                Debug.LogWarning("PULO BLOQUEADO: o Player NÃO está sendo reconhecido no chão.");
+            }
         }
 
+        // Ataque
         if (Input.GetKeyDown(KeyCode.Z))
         {
             Attack();
         }
 
         Flip();
-
-        wasGrounded = isGrounded;
     }
 
     void FixedUpdate()
@@ -54,12 +75,26 @@ public class PlayerController : MonoBehaviour
 
     void Move()
     {
-        rb.linearVelocity = new Vector2(moveInput * speed, rb.linearVelocity.y);
+        if (rb == null)
+            return;
+
+        rb.linearVelocity = new Vector2(
+            moveInput * speed,
+            rb.linearVelocity.y
+        );
     }
 
     void Jump()
     {
-        rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
+        if (rb == null)
+            return;
+
+        rb.linearVelocity = new Vector2(
+            rb.linearVelocity.x,
+            jumpForce
+        );
+
+        Debug.Log("PULO EXECUTADO!");
     }
 
     void CheckGround()
@@ -85,7 +120,9 @@ public class PlayerController : MonoBehaviour
             return;
 
         Vector3 scale = transform.localScale;
+
         scale.x = Mathf.Abs(scale.x) * Mathf.Sign(moveInput);
+
         transform.localScale = scale;
     }
 
@@ -115,16 +152,27 @@ public class PlayerController : MonoBehaviour
 
     void OnDrawGizmosSelected()
     {
+        // GroundCheck
         if (groundCheck != null)
         {
             Gizmos.color = Color.green;
-            Gizmos.DrawWireSphere(groundCheck.position, groundCheckRadius);
+
+            Gizmos.DrawWireSphere(
+                groundCheck.position,
+                groundCheckRadius
+            );
         }
 
+        // AttackPoint
         if (attackPoint != null)
         {
             Gizmos.color = Color.red;
-            Gizmos.DrawWireSphere(attackPoint.position, attackRange);
+
+            Gizmos.DrawWireSphere(
+                attackPoint.position,
+                attackRange
+            );
         }
     }
 }
+
