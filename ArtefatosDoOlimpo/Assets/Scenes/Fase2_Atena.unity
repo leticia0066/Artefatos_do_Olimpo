@@ -132,9 +132,9 @@ GameObject:
   - component: {fileID: 35320971}
   - component: {fileID: 35320970}
   - component: {fileID: 35320969}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MovingPlatform (1)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2160,7 +2160,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
   speed: 6
-  jumpForce: 10
+  jumpForce: 15
   groundCheck: {fileID: 222343388}
   groundCheckRadius: 0.2
   groundLayer:
@@ -172743,9 +172743,9 @@ GameObject:
   - component: {fileID: 1149720905}
   - component: {fileID: 1149720904}
   - component: {fileID: 1149720903}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MovingPlatform
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -175402,9 +175402,9 @@ GameObject:
   - component: {fileID: 1704687519}
   - component: {fileID: 1704687518}
   - component: {fileID: 1704687517}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MovingPlatform (2)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
